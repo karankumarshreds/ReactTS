@@ -4,7 +4,11 @@ interface RepositoriesState {
   data: string[];
 }
 
-export const repositoriesReducer = (state: RepositoriesState, action: any) => {
+export const repositoriesReducer = (
+  state: RepositoriesState,
+  action: any
+  // this won't let us return wrong data
+): RepositoriesState => {
   switch (action.type) {
     case 'SEARCH_REPOS_REQUEST':
       return { loading: true, error: null, data: [] };
