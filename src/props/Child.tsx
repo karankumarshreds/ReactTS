@@ -1,12 +1,18 @@
 interface ChildProps {
   color: string;
+  onClick: () => void;
 }
 
 /* Different ways to consume props */
 
 // 1st way
-export const Child = ({ color }: ChildProps) => {
-  return <div>{color}</div>;
+export const Child = ({ color, onClick }: ChildProps) => {
+  return (
+    <div>
+      {color}
+      <button onClick={onClick}>Click me</button>
+    </div>
+  );
 };
 
 // 2nd way (ideal appraoch)
