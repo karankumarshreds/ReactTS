@@ -1,9 +1,10 @@
 import ReactDOM from 'react-dom';
+import Todo from './state/Todo';
 
 const App = () => {
   return (
     <div>
-      <h1>Hi there</h1>
+      <Todo />
     </div>
   );
 };
