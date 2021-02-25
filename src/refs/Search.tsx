@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 const users = [
   { name: 'Sarah', age: 20 },
@@ -20,6 +20,13 @@ const Search: React.FC = () => {
   // So we must account for input element to be undefined
   // Hence we will explicitly give it a value of null
   const inputRef = useRef<HTMLInputElement | null>(null);
+
+  useEffect(() => {
+    if (!inputRef.current) {
+      return;
+    }
+    inputRef.current.focus();
+  }, []);
 
   const onClick = () => {
     setName('');
