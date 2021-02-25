@@ -1,11 +1,12 @@
 import ReactDOM from 'react-dom';
 // import Todo from './state/Todo';
-import Search from './state/Search';
+// import Search from './state/Search';
+import Event from './events/Event';
 
 const App = () => {
   return (
     <div>
-      <Search />
+      <Event />
     </div>
   );
 };
