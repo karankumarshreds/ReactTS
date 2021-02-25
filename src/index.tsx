@@ -1,10 +1,11 @@
 import ReactDOM from 'react-dom';
-import Todo from './state/Todo';
+// import Todo from './state/Todo';
+import Search from './state/Search';
 
 const App = () => {
   return (
     <div>
-      <Todo />
+      <Search />
     </div>
   );
 };
