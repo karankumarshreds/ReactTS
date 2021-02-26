@@ -14,4 +14,7 @@ interface SearchReposFailAction {
   payload: string;
 }
 
-export type Action = SearchReposRequestAction | SearchReposSuccessAction | SearchReposFailAction;
+export type ReposAction =
+  | SearchReposRequestAction
+  | SearchReposSuccessAction
+  | SearchReposFailAction;

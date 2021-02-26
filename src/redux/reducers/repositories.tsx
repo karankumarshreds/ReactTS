@@ -1,4 +1,4 @@
-import { Action } from '../actions';
+import { ReposAction } from '../actions';
 import { ReposActionType } from '../types';
 
 interface RepositoriesState {
@@ -9,7 +9,7 @@ interface RepositoriesState {
 
 export const repositoriesReducer = (
   state: RepositoriesState,
-  action: Action
+  action: ReposAction
   // this won't let us return wrong data
 ): RepositoriesState => {
   switch (action.type) {
