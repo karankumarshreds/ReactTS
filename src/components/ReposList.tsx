@@ -6,12 +6,10 @@ import { useActions } from '../hooks/useActions';
 const ReposList: React.FC = () => {
   const [term, setTerm] = useState<string>('');
   const { searchRepos } = useActions();
-  //   const dispatch = useDispatch();
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // call the action creator
-    // dispatch(actions.searchRepos(term));
+    searchRepos(term);
   };
 
   return (
