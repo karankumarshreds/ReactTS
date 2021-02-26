@@ -1,9 +1,11 @@
 import axios from 'axios';
 import { ReposActionType } from '../types';
 import { ReposAction } from '../actions';
+import { Dispatch } from 'redux';
 
 export const searchRepos = (term: string) => {
-  return async (dispatch: any) => {
+  // this won't let us dispatch any bogus data
+  return async (dispatch: Dispatch<ReposAction>) => {
     dispatch({
       type: ReposActionType.SEARCH_REPOS_REQUEST,
     });
