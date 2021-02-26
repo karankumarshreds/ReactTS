@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import { actions } from '../redux';
-import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useActions } from '../hooks/useActions';
 
 const ReposList: React.FC = () => {
   const [term, setTerm] = useState<string>('');
   const { searchRepos } = useActions();
-
+  const { data, loading, error } = useSelector((state: any) => state.repositories);
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     searchRepos(term);
   };
+
+  console.log(data);
 
   return (
     <div>

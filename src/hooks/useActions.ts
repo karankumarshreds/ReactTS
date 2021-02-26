@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { Action, bindActionCreators } from 'redux';
+import { bindActionCreators } from 'redux';
 // action creators
 import { actions } from '../redux';
 
