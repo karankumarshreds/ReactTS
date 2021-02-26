@@ -20,9 +20,11 @@ interface SearchReposFailAction {
   payload: string;
 }
 
+type Action = SearchReposRequestAction | SearchReposSuccessAction | SearchReposFailAction;
+
 export const repositoriesReducer = (
   state: RepositoriesState,
-  action: SearchReposRequestAction | SearchReposSuccessAction | SearchReposFailAction
+  action: Action
   // this won't let us return wrong data
 ): RepositoriesState => {
   switch (action.type) {
