@@ -5,13 +5,14 @@ import { useActions } from '../hooks/useActions';
 const ReposList: React.FC = () => {
   const [term, setTerm] = useState<string>('');
   const { searchRepos } = useActions();
-  const { data, loading, error } = useSelector((state: any) => state.repositories);
+  const { data, loading, error } = useSelector((state: RootState) => state.repositories);
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     searchRepos(term);
   };
 
-  console.log(data);
+  if (loading) return <h1>Loading</h1>;
+  if (error) return <h1>Error</h1>;
 
   return (
     <div>
