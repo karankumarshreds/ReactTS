@@ -13,7 +13,8 @@ export const searchRepos = (term: string) => {
     try {
       const { data } = await axios.get(`registry.npmjs.org/-/v1/search`, {
         params: {
-          text: term, // this makes the uri as `registry.npmjs.org/-/v1/search?text=${term}`
+          // this makes the uri as `registry.npmjs.org/-/v1/search?text=${term}`
+          text: term,
         },
       });
       const names = data.objects.map((result: any) => {
