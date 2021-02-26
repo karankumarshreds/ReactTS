@@ -14,6 +14,10 @@ const ReposList: React.FC = () => {
   if (loading) return <h1>Loading</h1>;
   if (error) return <h1>Error</h1>;
 
+  const renderList = () => {
+    return data.map((result, i) => <li key={i}>{result}</li>);
+  };
+
   return (
     <div>
       <h4>Search Repositories</h4>
@@ -21,6 +25,7 @@ const ReposList: React.FC = () => {
         <input value={term} onChange={(e) => setTerm(e.target.value)} />
         <button>Search</button>
       </form>
+      <ul>{renderList()}</ul>
     </div>
   );
 };
