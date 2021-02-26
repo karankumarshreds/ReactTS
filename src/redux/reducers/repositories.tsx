@@ -8,7 +8,11 @@ interface RepositoriesState {
 }
 
 export const repositoriesReducer = (
-  state: RepositoriesState,
+  state: RepositoriesState = {
+    loading: false,
+    error: null,
+    data: [],
+  },
   action: ReposAction
   // this won't let us return wrong data
 ): RepositoriesState => {
