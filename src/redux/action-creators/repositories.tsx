@@ -11,7 +11,7 @@ export const searchRepos = (term: string) => {
     });
 
     try {
-      const { data } = await axios.get(`registry.npmjs.org/-/v1/search`, {
+      const { data } = await axios.get(`https://registry.npmjs.org/-/v1/search`, {
         params: {
           // this makes the uri as `registry.npmjs.org/-/v1/search?text=${term}`
           text: term,
